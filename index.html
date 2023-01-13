@@ -8,9 +8,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    hii vue3
+    <!-- hii vue3 -->
+    <div id="vue-js"></div>
     <script>
-      console.log(Vue.createApp()); //gives a object that have a createApp() API
+      const app = Vue.createApp({
+        template: "<h1>hi</h1>",
+      });
+      app.mount("#vue-js");
     </script>
   </body>
 </html>
