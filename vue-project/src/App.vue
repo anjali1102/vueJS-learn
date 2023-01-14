@@ -5,10 +5,39 @@
 
 <template>
   <header>
-    <h3>hello VueJS</h3>
-    <h1>I am Anjali 🌻</h1>
+    <h3 v-if="false" v-html="title"></h3>
+    <h1 v-else>I am Anjali 🌻</h1>
+
+    <h3 v-if="2 * 2 === 40" v-html="title"></h3>
+    <h2 v-else-if="isShowing">This is v-else-if part</h2>
+    <h1 v-else>something else part</h1>
+    <!-- <div v-show="isShowing" >
+      Count is :
+      <span>{{ count }}</span>
+    </div> -->
+
+    <h1 v-text="count"></h1>
+    <h3>Count is : {{ count }}</h3>
+    <h5 v-once>Count is : {{ count }}</h5>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: "Hello to directives",
+      isShowing: true,
+      count: 0,
+    };
+  },
+  mounted() {
+    setInterval(() => {
+      this.count++;
+    }, 1000);
+  },
+};
+</script>
 
 <style scoped>
 header {
