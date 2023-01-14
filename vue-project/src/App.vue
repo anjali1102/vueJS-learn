@@ -6,7 +6,7 @@
 <template>
   <header>
     <h3 v-if="false" v-html="title"></h3>
-    <h1 v-else>I am Anjali 🌻</h1>
+    <h1 v-else>I am Anjali🌻</h1>
 
     <h3 v-if="2 * 2 === 40" v-html="title"></h3>
     <h2 v-else-if="isShowing">This is v-else-if part</h2>
