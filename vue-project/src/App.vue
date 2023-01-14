@@ -5,21 +5,18 @@
 
 <template>
   <header>
-    <h3>hello VueJS</h3>
-    <h1>I am Anjali 🌻</h1>
-    <h3>{{ title }}</h3>
+    <h1>Project 1: Todo</h1>
   </header>
 </template>
 
 <script>
-
-export default { 
-  data(){
-     return {
-       title:"🙆🙆🙆🙆",
-      }
-  }
-}
+export default {
+  data() {
+    return {
+      title: "🙆🙆🙆🙆",
+    };
+  },
+};
 </script>
 
 <style scoped>
