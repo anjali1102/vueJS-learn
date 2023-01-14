@@ -7,8 +7,20 @@
   <header>
     <h3>hello VueJS</h3>
     <h1>I am Anjali 🌻</h1>
+    <h3>{{ title }}</h3>
   </header>
 </template>
+
+<script>
+
+export default { 
+  data(){
+     return {
+       title:"🙆🙆🙆🙆",
+      }
+  }
+}
+</script>
 
 <style scoped>
 header {
