@@ -17,7 +17,9 @@
     <!-- we can use v-bind to connect html attribute with data inside Vue -->
 
     <!-- dynamic binding -->
-    <input :[attribute]="newHero" type="text" placeholder="add name" />
+    <!-- v-model.trim -->
+    <!-- v-model.numer -->
+    <input v-model.lazy="newHero" type="text" placeholder="add name" />
     <button :disabled="isDisable">Add hero</button>
   </section>
 </template>
