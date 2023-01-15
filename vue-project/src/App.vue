@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <header>
+  <section>
     <h1>Project 1: Todo</h1>
     <ul v-bind:key="index" v-for="(people, index) in gokuldham">
       {{
@@ -14,15 +14,18 @@
         people
       }}
     </ul>
-    <input type="text" placeholder="add name" />
-  </header>
+    <!-- we can use v-bind to connect html attribute with data inside Vue -->
+    <input v-bind:value="newHero" type="text" placeholder="add name" />
+    <button v-bind:disabled="isDisable">Add hero</button>
+  </section>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      title: "🙆🙆🙆🙆",
+      isDisable: true,
+      newHero: "Iyer",
       gokuldham: [
         "Tapu",
         "Jetha",
@@ -40,34 +43,7 @@ export default {
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
+section {
   max-height: 100vh;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-header .wrapper {
-  display: flex;
-  place-items: flex-start;
-  flex-wrap: wrap;
-}
-
-nav {
-  text-align: left;
-  margin-left: -1rem;
-  font-size: 1rem;
-
-  padding: 1rem 0;
-  margin-top: 1rem;
 }
 </style>
