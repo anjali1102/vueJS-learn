@@ -6,7 +6,7 @@
 <template>
   <section>
     <h1>Project 1: Todo</h1>
-    <ul v-bind:key="index" v-for="(people, index) in gokuldham">
+    <ul :key="index" v-for="(people, index) in gokuldham">
       {{
         index + 1
       }}:
@@ -15,8 +15,10 @@
       }}
     </ul>
     <!-- we can use v-bind to connect html attribute with data inside Vue -->
-    <input v-bind:value="newHero" type="text" placeholder="add name" />
-    <button v-bind:disabled="isDisable">Add hero</button>
+
+    <!-- dynamic binding -->
+    <input :[attribute]="newHero" type="text" placeholder="add name" />
+    <button :disabled="isDisable">Add hero</button>
   </section>
 </template>
 
@@ -24,8 +26,9 @@
 export default {
   data() {
     return {
+      attribute: "value",
       isDisable: true,
-      newHero: "Iyer",
+      newHero: "Iyer 2.0",
       gokuldham: [
         "Tapu",
         "Jetha",
