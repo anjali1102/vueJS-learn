@@ -19,13 +19,8 @@
     <!-- dynamic binding -->
     <!-- v-model.trim -->
     <!-- v-model.numer -->
-    <form
-      @click.prevent="
-        gokuldham.push(newHero);
-        newHero = '';
-      "
-    >
-      <input v-model.lazy="newHero" type="text" placeholder="add name" />
+    <form @submit.prevent="addHero">
+      <input v-model="newHero" type="text" placeholder="add name" />
       <button :disabled="isDisable" type="submit">Add hero</button>
     </form>
     <br />
@@ -35,6 +30,14 @@
 
 <script>
 export default {
+  methods: {
+    addHero() {
+      if (this.newHero !== "") {
+        this.gokuldham.push(this.newHero);
+        this.newHero = "";
+      }
+    },
+  },
   data() {
     return {
       attribute: "value",
