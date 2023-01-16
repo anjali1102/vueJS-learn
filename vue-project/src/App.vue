@@ -20,9 +20,15 @@
     <!-- v-model.trim -->
     <!-- v-model.numer -->
     <input v-model.lazy="newHero" type="text" placeholder="add name" />
-    <button :disabled="isDisable" v-on:click="newHero = 'sundar veera'">
+    <button :disabled="isDisable" @mouseover="newHero = 'sundar veera'">
       Add hero
     </button>
+    <br />
+    <br />
+    <form @click.prevent="newPeople = 'pakka bhai'">
+      <input type="text" v-model="newPeople" />
+      <button type="submit">Add People</button>
+    </form>
   </section>
 </template>
 
@@ -33,6 +39,7 @@ export default {
       attribute: "value",
       isDisable: false,
       newHero: "Iyer 2.0",
+      newPeople: "",
       gokuldham: [
         "Tapu",
         "Jetha",
