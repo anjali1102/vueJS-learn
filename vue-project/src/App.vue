@@ -19,16 +19,17 @@
     <!-- dynamic binding -->
     <!-- v-model.trim -->
     <!-- v-model.numer -->
-    <input v-model.lazy="newHero" type="text" placeholder="add name" />
-    <button :disabled="isDisable" @mouseover="newHero = 'sundar veera'">
-      Add hero
-    </button>
-    <br />
-    <br />
-    <form @click.prevent="newPeople = 'pakka bhai'">
-      <input type="text" v-model="newPeople" />
-      <button type="submit">Add People</button>
+    <form
+      @click.prevent="
+        gokuldham.push(newHero);
+        newHero = '';
+      "
+    >
+      <input v-model.lazy="newHero" type="text" placeholder="add name" />
+      <button :disabled="isDisable" type="submit">Add hero</button>
     </form>
+    <br />
+    <br />
   </section>
 </template>
 
@@ -38,8 +39,7 @@ export default {
     return {
       attribute: "value",
       isDisable: false,
-      newHero: "Iyer 2.0",
-      newPeople: "",
+      newHero: "Iyer",
       gokuldham: [
         "Tapu",
         "Jetha",
